@@ -21,9 +21,9 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 ### 2. [`Motif.py`](./Motif.py)
 
 **Description:** Treats motifs as equivalent to strings while storing information about positions that allow multiple amino acids.
-
-- Subclass `Inc` of `Motif` accounts for `[XY]`: either X or Y.
-- Subclass `Exc` of `Motif` accounts for `{X}`: any amino acid except X.
+- Subclass `Inc` of `Motif` accounts for [XY]: either X or Y.
+- Subclass `Exc` of `Motif` accounts for {X}: any amino acid except X.
+- `list_to_motif` function converts any list of motifs or strings to `Motif` object.
 
 **Returns:** An object of class `Motif`, with behaviours such as `len()`, equality comparisons (`==`) with strings, and indexing defined.
 
@@ -34,25 +34,23 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 **Description:** Maintains character streaks while finding substrings.
 
 - `streak`: Finds all occurrences of a substring.
-- `istreak`: Allows interactive streaking, updating the substring in each iteration and producing output according to a specified query.
+- `istreak`: Allows interactive streaking, updating the substring in each iteration and producing output according to a specified query (a function operating on the `streaks` set can be passed as a parameter)
 - `multi`: Finds all occurrences of multiple substrings in a given string.
 
 **Returns:**
 
 - `streak` returns a set of all starting indices of the substring.
-- `istreak` returns a generator object that yields the output of a specified query (a function operating on the streak set) after checking each character of the string.
+- `istreak` returns a generator object that yields the output of a query after checking each character of the string.
 - `multi` returns a dictionary containing substrings as keys and sets of their initial occurrence indices as values.
 
 ---
 
 ### 4. [`uniprot.py`](./uniprot.py)
+[Credit: Generated using Google Gemini.]
 
 **Description:** Fetches protein data from the UniProt database using the protein ID.
 
-<sub>Credit: Generated using Google Gemini.</sub>
-
-**Returns:** A dictionary containing all available data about the protein.
-
+**Returns:** A dictionary containing all available data about the protein.<br>
 `uniprot(f"{ID}")["sequence"]["value"]` returns the protein sequence as a string.
 
 ---
