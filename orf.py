@@ -2,7 +2,7 @@ from fasta import read as fs
 from revc import revc
 import json
 
-codon=json.loads(open("RNA Codon Table.txt","r").read())
+codon=json.loads(open("RNA_Codon_Table.txt", "r").read())
 
 def scan(rna):
     rf=[[],[],[]]

@@ -1,5 +1,5 @@
 import json
-codon=json.loads(open("RNA Codon Table.txt","r").read().strip())
+codon=json.loads(open("RNA_Codon_Table.txt", "r").read().strip())
 
 def prot(seq):
     prtn = ""

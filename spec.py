@@ -1,6 +1,6 @@
 import json
 pms=list(map(float,open("rosalind_spec.txt","r").read().strip().splitlines()))
-mass=json.loads(open("Monoisotopic Mass Table.txt","r").read())
+mass=json.loads(open("Monoisotopic_Mass_Table.txt", "r").read())
 inv={v:k for k,v in mass.items()}
 prt=[""]
 with open("spec.txt","w") as f:
