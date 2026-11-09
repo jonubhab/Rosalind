@@ -28,7 +28,8 @@ class Motif:
             else:
                 sub+=i
 
-    def list_to_motif(self,l):
+    @staticmethod
+    def list_to_motif(l):
         return Motif("".join(l))
 
     def __len__(self):
