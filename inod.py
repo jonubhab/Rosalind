@@ -1,0 +1,1 @@
+print(int(open("rosalind_inod.txt","r").read().strip())-2)
