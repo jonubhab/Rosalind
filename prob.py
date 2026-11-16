@@ -1,6 +1,10 @@
 from math import log10
 
-prob=lambda dna,x:sum(log10((1 - x) / 2) if j in "AT" else log10(x / 2) for j in dna)
+def prob(dna,x):
+    try:
+        return sum(log10((1 - x) / 2) if j in "AT" else log10(x / 2) for j in dna)
+    except ValueError:
+        return -float("inf")
 
 if __name__=="__main__":
     dna,gc=open("rosalind_prob.txt","r").read().strip().splitlines()

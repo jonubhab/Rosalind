@@ -2,10 +2,11 @@ from fasta import read as fs
 from itertools import permutations
 from copy import deepcopy as copy
 
-def overlap(s1,s2):
+def overlap(s1,s2,omin=0,omax=0):
     if s1==s2:
         return 0
-    for i in range(min(len(s1),len(s2)),min(len(s1),len(s2))//2,-1):
+    if omax==0: omax=min(len(s1),len(s2))
+    for i in range(omax,omin,-1):
         if s1[-i:]==s2[:i]:
             return i
     else:
@@ -53,7 +54,7 @@ class Node:
             del walker
 
     def interact(self,other):
-        weight=overlap(self.strand,other.strand)
+        weight=overlap(self.strand,other.strand,omin=min(len(self.strand),len(other.strand))//2)
         if weight>0:
             self.edges.append(Edge(weight,other))
 
@@ -66,27 +67,29 @@ class Edge:
         walker.score+=s.weight
         s.node.traverse(walker)
 
-data=fs("rosalind_long.txt")
-start=Node("start","")
-for k in data:
-    data[k]=Node(k,data[k])
-    start.edges.append(Edge(0, data[k]))
 
-for i, j in permutations(data, 2):
-    data[i].interact(data[j])
+if __name__=="__main__":
+    data=fs("rosalind_long.txt")
+    start=Node("start","")
+    for k in data:
+        data[k]=Node(k,data[k])
+        start.edges.append(Edge(0, data[k]))
 
-start.traverse(Walker())
+    for i, j in permutations(data, 2):
+        data[i].interact(data[j])
 
-best=max(Walker.reports,key=lambda x:x.score)
+    start.traverse(Walker())
 
-def stitch(s1,s2):
-    i=overlap(s1,s2)
-    if i==0: return s1+s2
-    return s1[:-i]+s2
+    best=max(Walker.reports,key=lambda x:x.score)
 
-seq=""
-for i in best.nodes:
-    if i=="start": continue
-    seq=stitch(seq,data[i].strand)
+    def stitch(s1,s2):
+        i=overlap(s1,s2,omin=min(len(s1),len(s2))//2)
+        if i==0: return s1+s2
+        return s1[:-i]+s2
 
-open("long.txt","w").write(seq)
+    seq=""
+    for i in best.nodes:
+        if i=="start": continue
+        seq=stitch(seq,data[i].strand)
+
+    open("long.txt","w").write(seq)

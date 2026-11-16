@@ -1,0 +1,1 @@
+print(2**int(open("rosalind_sset.txt","r").read().strip())%1_000_000)

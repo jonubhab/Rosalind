@@ -8,6 +8,6 @@ aa + aa = 0         [C(n,2)/C(N,2)]
 '''
 
 k,m,n=map(int,open("rosalind_iprb.txt","r").read().strip().split())
-C=lambda x:x*(x-1)/2
+C2=lambda x: x * (x - 1) / 2
 N=k+m+n
-print(f"{1+(-C(N-k)+0.75*C(m)+0.5*m*n)/C(N):.5f}")
+print(f"{1 + (-C2(N - k) + 0.75 * C2(m) + 0.5 * m * n) / C2(N):.5f}")

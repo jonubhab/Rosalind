@@ -79,9 +79,7 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Code:** [`dna.py`](./dna.py)
 
-**Algorithm:**
-
-**Learning:**
+**Algorithm:** Loop through each character of the string and count number of 'A','C','G' and 'T' using a dictionary.
 
 ---
 
@@ -89,9 +87,7 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Code:** [`rna.py`](./rna.py)
 
-**Algorithm:**
-
-**Learning:**
+**Algorithm:** Replace 'T' with 'U' using `dna.replace('T','U')`
 
 ---
 
@@ -99,23 +95,199 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Code:** [`revc.py`](./revc.py)
 
-**Algorithm:**
-
-**Learning:**
+**Algorithm:** Loop through every character in the reverse of the string and build another string using the complements of the characters.
 
 ---
 
-### 4. Rabbits and Recurrence Relations
+### 4. Mendel's First Law
+
+**Code:** [`iprb.py`](./iprb.py)
+
+**Mathematics:**
+
+$
+\begin{align} \text{Notation: } &\text{A is the dominant allele,} \\&\text{a is the recessive allele,} \\&\text{X means can be any allele of the gene.}\end{align} 
+$
+
+$$
+\begin{flalign*}
+& \text{Given}, && \\
+& k = n(AA) && \\
+& m = n(Aa) && \\
+& n = n(aa) 
+\end{flalign*}
+$$
+
+$\text{Let Total population }N = k+m+n$
+
+
+Considering different cases of pairs mating:
+- Case 1: One of the parents is homozygous dominant $(AA\times XX)$
+
+*Punett Square:*
+
+|       | X  | X  |
+|-------|----|----|
+| **A** | AX | AX |
+| **A** | AX | AX |
+
+$\therefore P(AX|AA\times XX) = 1 $
+
+$P(AA\times XX) = 1-\frac{{}^{N-k}C_2}{{}^NC_2}$
+
+- Case 2: Both parents are heterozygous dominant $(Aa\times Aa)$
+
+*Punett Square:*
+
+|       | A  | a  |
+|-------|----|----|
+| **A** | AA | Aa |
+| **a** | Aa | aa |
+
+$\therefore P(AX|Aa\times Aa) = 0.75 $
+
+$P(Aa\times Aa) = \frac{{}^mC_2}{{}^NC_2}$
+
+- Case 3: One parent is heterozygous dominant and other is homozygous recessive $(Aa\times aa)$
+
+*Punett Square:*
+
+|       | a  | a  |
+|-------|----|----|
+| **A** | Aa | Aa |
+| **a** | aa | aa |
+
+$\therefore P(AX|Aa\times aa) = 0.5 $
+
+$P(Aa\times aa) = \frac{m \cdot n}{{}^NC_2}$
+
+- Case 4: Both parents are homozygous recessive $(aa\times aa)$
+
+*Punett Square:*
+
+|       | a  | a  |
+|-------|----|----|
+| **a** | aa | aa |
+| **a** | aa | aa |
+
+$\therefore P(AX|aa\times aa) = 0 $
+
+$\therefore \boxed{P(AX)=1-\frac{{}^{N-k}C_2 - 0.75^mC_2 - 0.5m n}{{}^NC_2}}$
+
+
+**Algorithm:** Calculated the probability using the above formula directly
+
+**Learning:** How a trait in a population passes on to the next generation.
+
+---
+
+### 5. Calculating Expected Offspring
+
+**Code:** [`iev.py`](./iev.py)
+
+**Mathematics:** 
+$$
+\boxed{E[AX] = \sum{n(i)\cdot P(AX|i)}}
+$$
+
+Here, $i \in \{X\times Y: X,Y \in \{AA,Aa,aa\}\}$
+
+$P(AX|i)$ follows from [`iprb`](#4-mendels-first-law) (Mendel's first law)
+
+**Algorithm:** Calculated using the above formula, multiplying each of its term by 2, as each couple give 2 offsprings:`sum([2*i*j for i,j in zip(n,P)])`
+
+**Learning:** This combined with [`iprb`](#4-mendels-first-law) can be used to model the genotypic ratio in a population.
+
+---
+
+### 5. Rabbits and Recurrence Relations
+
+[**Problem Statement**](https://rosalind.info/problems/fib/)
 
 **Code:** [`fib.py`](./fib.py)
 
-**Algorithm:**
+**Algorithm:** Built the following function using recursion:
 
-**Learning:**
+$$
+f(n) = \begin{cases} 
+  0 & \text{if } n \le 0 \\
+  1 & \text{if } n = 1 \\ 
+  f(n-1) + k \cdot f(n-2) & \text{if } n > 1
+\end{cases}
+$$
+
+As `f(n-1)` are all the rabbits who are surviving from the previous generation. To account for new births, `f(n-2)` are the total number of rabbits which have reached reproductive age now, and each give birth to `k` rabbits
+
+*Base Cases:*
+- At `n < 1`, population is 0. 
+- At `n = 1`, population is 1. (Given)
+
+**Learning:** 
+- The motive behind Fibonacci series.
+- The simplest model of population growth.
 
 ---
 
-### 5. Computing GC Content
+### 6. Mortal Fibonacci Rabbits
+
+[**Problem Statement**](https://rosalind.info/problems/fibd/)
+
+**Code:** [`fibd.py`](./fibd.py)
+
+**Mathematics:**
+
+$$
+\begin{flalign*}
+\text{Let } &P_n = \text{Population of rabbits in }n^{th}\text{ generation} && \\
+            &B_n = \text{Number of births in }n^{th}\text{ generation} && \\
+            &D_n = \text{Number of deaths while transitioning from }(n-1)^{th}\text{ to }n^{th}\text{ generation} && \\
+\end{flalign*}
+$$
+
+- The number of rabbits in $n^{th}$ generation are the rabbits from the previous generation after some deaths and births.
+
+$$\therefore P_n = P_{n-1} + B_n - D_n$$
+
+- The number of births in $n^{th}$ generation are given by the rabbits in $(n-2)^{th}$ generation as all of them have reached reproductive age, except for the rabbits which died while transitioning to next generation.
+
+$$\therefore B_n = P_{n-2} - D_{n-1}$$
+
+- The number of deaths in $n^{th}$ generation is the number of rabbits born in $(n-k)^{th}$
+
+$$\therefore D_n = B_{n-k}$$
+
+
+**Algorithm:** Defined the following three functions with some base cases:
+
+$$
+P(n) = \begin{cases} 
+  0 & \text{if } n \le 0 \\
+  1 & \text{if } n = 1 \\ 
+  P(n-1) + B(n) - D(n) & \text{if } n > 1
+\end{cases}
+$$
+
+$$
+B(n) = \begin{cases} 
+  0 & \text{if } n \le 0 \\
+  1 & \text{if } n = 1 \\ 
+  P(n-2) - D(n-1) & \text{if } n > 1
+\end{cases}
+$$
+
+$$
+D(n) = \begin{cases} 
+  0 & \text{if } n \le 0 \\
+  B(n-k) & \text{if } n > 1
+\end{cases}
+$$
+
+**Learning:** Constructing ecological models from the scratch using simple logic.
+
+---
+
+
+### 4. Computing GC Content
 
 **Code:** [`gc.py`](./gc.py)
 
@@ -123,21 +295,14 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Learning:**
 
+
+
+
 ---
 
 ### 6. Counting Point Mutations
 
 **Code:** [`hamm.py`](./hamm.py)
-
-**Algorithm:**
-
-**Learning:**
-
----
-
-### 7. Mendel's First Law
-
-**Code:** [`iprb.py`](./iprb.py)
 
 **Algorithm:**
 
@@ -173,15 +338,7 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Learning:**
 
----
 
-### 11. Mortal Fibonacci Rabbits
-
-**Code:** [`fibd.py`](./fibd.py)
-
-**Algorithm:**
-
-**Learning:**
 
 ---
 
@@ -193,15 +350,6 @@ I have tried not using the predefined modules for bioinformatics as algorithm de
 
 **Learning:**
 
----
-
-### 13. Calculating Expected Offspring
-
-**Code:** [`iev.py`](./iev.py)
-
-**Algorithm:**
-
-**Learning:**
 
 ---
 

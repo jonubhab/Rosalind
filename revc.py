@@ -1,5 +1,3 @@
-import sys
-
 c={"A":"T","C":"G","G":"C","T":"A"}
 
 def revc(seq):
