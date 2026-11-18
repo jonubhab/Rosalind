@@ -6,6 +6,56 @@ I have tried not using the predefined modules for bioinformatics, as algorithm d
 
 ---
 
+## Index of Problems
+
+| # | Code | Problem | Solution | Description |
+|--:|:-----|:--------|:---------|:------------|
+| 1 | `DNA` | [Counting DNA Nucleotides](https://rosalind.info/problems/dna/) | [`dna.py`](./dna.py) | [Notes](#1-counting-dna-nucleotides) |
+| 2 | `RNA` | [Transcribing DNA into RNA](https://rosalind.info/problems/rna/) | [`rna.py`](./rna.py) | [Notes](#2-transcribing-dna-into-rna) |
+| 3 | `REVC` | [Complementing a Strand of DNA](https://rosalind.info/problems/revc/) | [`revc.py`](./revc.py) | [Notes](#3-complementing-a-strand-of-dna) |
+| 4 | `FIB` | [Rabbits and Recurrence Relations](https://rosalind.info/problems/fib/) | [`fib.py`](./fib.py) | [Notes](#4-rabbits-and-recurrence-relations) |
+| 5 | `GC` | [Computing GC Content](https://rosalind.info/problems/gc/) | [`gc.py`](./gc.py) | [Notes](#5-computing-gc-content) |
+| 6 | `HAMM` | [Counting Point Mutations](https://rosalind.info/problems/hamm/) | [`hamm.py`](./hamm.py) | [Notes](#6-counting-point-mutations) |
+| 7 | `IPRB` | [Mendel's First Law](https://rosalind.info/problems/iprb/) | [`iprb.py`](./iprb.py) | [Notes](#7-mendels-first-law) |
+| 8 | `PROT` | [Translating RNA into Protein](https://rosalind.info/problems/prot/) | [`prot.py`](./prot.py) | [Notes](#8-translating-rna-into-protein) |
+| 9 | `SUBS` | [Finding a Motif in DNA](https://rosalind.info/problems/subs/) | [`subs.py`](./subs.py) | [Notes](#9-finding-a-motif-in-dna) |
+| 10 | `CONS` | [Consensus and Profile](https://rosalind.info/problems/cons/) | [`cons.py`](./cons.py) | [Notes](#10-consensus-and-profile) |
+| 11 | `FIBD` | [Mortal Fibonacci Rabbits](https://rosalind.info/problems/fibd/) | [`fibd.py`](./fibd.py) | [Notes](#11-mortal-fibonacci-rabbits) |
+| 12 | `GRPH` | [Overlap Graphs](https://rosalind.info/problems/grph/) | [`grph.py`](./grph.py) | [Notes](#12-overlap-graphs) |
+| 13 | `IEV` | [Calculating Expected Offspring](https://rosalind.info/problems/iev/) | [`iev.py`](./iev.py) | [Notes](#13-calculating-expected-offspring) |
+| 14 | `LCSM` | [Finding a Shared Motif](https://rosalind.info/problems/lcsm/) | [`lcsm.py`](./lcsm.py) | [Notes](#14-finding-a-shared-motif) |
+| 15 | `LIA` | [Independent Alleles](https://rosalind.info/problems/lia/) | [`lia.py`](./lia.py) | [Notes](#15-independent-alleles) |
+| 16 | `MPRT` | [Finding a Protein Motif](https://rosalind.info/problems/mprt/) | [`mprt.py`](./mprt.py) | [Notes](#16-finding-a-protein-motif) |
+| 17 | `MRNA` | [Inferring mRNA from Protein](https://rosalind.info/problems/mrna/) | [`mrna.py`](./mrna.py) | [Notes](#17-inferring-mrna-from-protein) |
+| 18 | `ORF` | [Open Reading Frames](https://rosalind.info/problems/orf/) | [`orf.py`](./orf.py) | [Notes](#18-open-reading-frames) |
+| 19 | `PERM` | [Enumerating Gene Orders](https://rosalind.info/problems/perm/) | [`perm.py`](./perm.py) | [Notes](#19-enumerating-gene-orders) |
+| 20 | `PRTM` | [Calculating Protein Mass](https://rosalind.info/problems/prtm/) | [`prtm.py`](./prtm.py) | [Notes](#20-calculating-protein-mass) |
+| 21 | `SPLC` | [RNA Splicing](https://rosalind.info/problems/splc/) | [`splc.py`](./splc.py) | [Notes](#21-rna-splicing) |
+| 22 | `LEXF` | [Enumerating k-mers Lexicographically](https://rosalind.info/problems/lexf/) | [`lexf.py`](./lexf.py) | [Notes](#22-enumerating-k-mers-lexicographically) |
+| 23 | `LGIS` | [Longest Increasing Subsequence](https://rosalind.info/problems/lgis/) | [`lgis.py`](./lgis.py) | [Notes](#23-longest-increasing-subsequence) |
+| 24 | `LONG` | [Genome Assembly as Shortest Superstring](https://rosalind.info/problems/long/) | [`long.py`](./long.py) | [Notes](#24-genome-assembly-as-shortest-superstring) |
+| 25 | `PPER` | [Partial Permutations](https://rosalind.info/problems/pper/) | [`pper.py`](./pper.py) | [Notes](#25-partial-permutations) |
+| 26 | `PROB` | [Introduction to Random Strings](https://rosalind.info/problems/prob/) | [`prob.py`](./prob.py) | [Notes](#26-introduction-to-random-strings) |
+| 27 | `SIGN` | [Enumerating Oriented Gene Orderings](https://rosalind.info/problems/sign/) | [`sign.py`](./sign.py) | [Notes](#27-enumerating-oriented-gene-orderings) |
+| 28 | `SSEQ` | [Finding a Spliced Motif](https://rosalind.info/problems/sseq/) | [`sseq.py`](./sseq.py) | [Notes](#28-finding-a-spliced-motif) |
+| 29 | `TREE` | [Completing a Tree](https://rosalind.info/problems/tree/) | [`tree.py`](./tree.py) | [Notes](#29-completing-a-tree) |
+| 30 | `CORR` | [Error Correction in Reads](https://rosalind.info/problems/corr/) | [`corr.py`](./corr.py) | [Notes](#30-error-correction-in-reads) |
+| 31 | `INOD` | [Counting Phylogenetic Ancestors](https://rosalind.info/problems/inod/) | [`inod.py`](./inod.py) | [Notes](#31-counting-phylogenetic-ancestors) |
+| 32 | `KMP` | [Speeding Up Motif Finding](https://rosalind.info/problems/kmp/) | [`kmp.py`](./kmp.py) | [Notes](#32-speeding-up-motif-finding) |
+| 33 | `LEXV` | [Ordering Strings of Varying Length Lexicographically](https://rosalind.info/problems/lexv/) | [`lexv.py`](./lexv.py) | [Notes](#33-ordering-strings-of-varying-length-lexicographically) |
+| 34 | `RSTR` | [Matching Random Motifs](https://rosalind.info/problems/rstr/) | [`rstr.py`](./rstr.py) | [Notes](#34-matching-random-motifs) |
+| 35 | `SPEC` | [Inferring Protein from Spectrum](https://rosalind.info/problems/spec/) | [`spec.py`](./spec.py) | [Notes](#35-inferring-protein-from-spectrum) |
+| 36 | `TRIE` | [Introduction to Pattern Matching](https://rosalind.info/problems/trie/) | [`trie.py`](./trie.py) | [Notes](#36-introduction-to-pattern-matching) |
+| 37 | `ASPC` | [Introduction to Alternative Splicing](https://rosalind.info/problems/aspc/) | [`aspc.py`](./aspc.py) | [Notes](#37-introduction-to-alternative-splicing) |
+| 38 | `EVAL` | [Expected Number of Restriction Sites](https://rosalind.info/problems/eval/) | [`eval.py`](./eval.py) | [Notes](#38-expected-number-of-restriction-sites) |
+| 39 | `MMCH` | [Maximum Matchings and RNA Secondary Structures](https://rosalind.info/problems/mmch/) | [`mmch.py`](./mmch.py) | [Notes](#39-maximum-matchings-and-rna-secondary-structures) |
+| 40 | `PMCH` | [Perfect Matchings and RNA Secondary Structures](https://rosalind.info/problems/pmch/) | [`pmch.py`](./pmch.py) | [Notes](#40-perfect-matchings-and-rna-secondary-structures) |
+| 41 | `REVP` | [Locating Restriction Sites](https://rosalind.info/problems/revp/) | [`revp.py`](./revp.py) | [Notes](#41-locating-restriction-sites) |
+| 42 | `SSET` | [Counting Subsets](https://rosalind.info/problems/sset/) | [`sset.py`](./sset.py) | [Notes](#42-counting-subsets) |
+| 43 | `TRAN` | [Transitions and Transversions](https://rosalind.info/problems/tran/) | [`tran.py`](./tran.py) | [Notes](#43-transitions-and-transversions) |
+
+---
+
 ## Utility Files
 
 ---
@@ -148,7 +198,7 @@ The $f(n-1)$ term accounts for the rabbits surviving from the previous generatio
 The GC content of a DNA sequence is the percentage of its nucleotides that are either Guanine or Cytosine.
 
 $$
-GC(\%)=\frac{N_G+N_C}{N_A+N_C+N_G+N_T}\times 100
+\text{GC}(\text{percent})=\frac{N_G+N_C}{N_A+N_C+N_G+N_T}\times 100
 $$
 
 **Algorithm:**
@@ -235,13 +285,8 @@ $$
 Combining the cases:
 
 $$
-\boxed{
-P(\text{dominant phenotype})
-=
-1-\frac{\binom{N-k}{2}-\frac34\binom{m}{2}-\frac12mn}{\binom{N}{2}}
-}
+\boxed{P(\text{dominant phenotype})=1-\frac{\binom{N-k}{2}-\frac34\binom{m}{2}-\frac12mn}{\binom{N}{2}}}
 $$
-
 **Algorithm:** Calculate the probability using the above formula directly.
 
 **Learning:** How a trait is inherited across generations through the possible combinations of parental alleles.
@@ -301,12 +346,12 @@ $$
 P_{b,i}=\text{Number of occurrences of nucleotide }b\text{ at position }i
 $$
 
-where $b\in\{A,C,G,T\}$.
+where $b\in\lbrace A,C,G,T\rbrace $.
 
 The consensus sequence is constructed by selecting the most frequent nucleotide at every position:
 
 $$
-C_i=\underset{b\in\{A,C,G,T\}}{\operatorname{argmax}} P_{b,i}
+C_i=\underset{b\in\lbrace A,C,G,T\rbrace }{\mathrm{argmax}} P_{b,i}
 $$
 
 **Algorithm:**
@@ -418,7 +463,7 @@ $$
 The expected number of offspring with a dominant phenotype is:
 
 $$
-E[X]=\sum_i n(i)\,P(\text{dominant phenotype}\mid i)
+E[X]=\sum_i n(i) P(\text{dominant phenotype}\mid i)
 $$
 
 Here, $i$ represents one of the six possible genotype pairings supplied by the problem. The conditional probabilities follow from Mendel's first law, described in [`iprb.py`](./iprb.py).
@@ -426,7 +471,7 @@ Here, $i$ represents one of the six possible genotype pairings supplied by the p
 Since each couple produces two offspring, the expected number is:
 
 $$
-E[X]=2\sum_i n(i)\,P(\text{dominant phenotype}\mid i)
+E[X]=2\sum_i n(i) P(\text{dominant phenotype}\mid i)
 $$
 
 **Algorithm:** Calculate the expected number using the above expression, multiplying each term by two because each couple produces two offspring.
@@ -485,7 +530,7 @@ $$
 Each generation contains $2^k$ individuals. Under the specified mating model, the number of $AaBb$ individuals follows a binomial distribution:
 
 $$
-X\sim\operatorname{Binomial}\left(2^k,\frac14\right)
+X\sim\mathrm{Binomial}\left(2^k,\frac14\right)
 $$
 
 The required probability is:
@@ -1047,7 +1092,7 @@ $$
 For a string $s$, the prefix function at position $i$ is:
 
 $$
-\pi(i)= \max\{k : s[0:k]=s[i-k+1:i+1]\}
+\pi(i)= \max\lbrace k : s[0:k]=s[i-k+1:i+1]\rbrace 
 $$
 
 where $k$ is restricted to proper prefixes of the substring ending at position $i$.
@@ -1230,13 +1275,13 @@ $$
 Using [`prob.py`](./prob.py), the motif probability is obtained from the logarithmic probability:
 
 $$
-p=10^{\operatorname{prob}(s,x)}
+p=10^{\mathrm{prob}(s,x)}
 $$
 
 Therefore:
 
 $$
-E[X]=(n-k+1)\cdot10^{\operatorname{prob}(s,x)}
+E[X]=(n-k+1)\cdot10^{\mathrm{prob}(s,x)}
 $$
 
 **Algorithm:**
@@ -1311,7 +1356,7 @@ A perfect matching pairs every nucleotide with exactly one complementary nucleot
 For $n$ A-U pairs and $m$ G-C pairs, the number of perfect matchings is:
 
 $$
-M=n!\,m!
+M=n!\cdot m!
 $$
 
 **Algorithm:**
@@ -1335,21 +1380,21 @@ $$
 A reverse-complement palindrome satisfies:
 
 $$
-s=\operatorname{revcomp}(s)
+s=\mathrm{revcomp}(s)
 $$
 
 Let $x$ be the current substring of length $L$, and let $q$ be the maximum suffix-prefix overlap between $x$ and its reverse complement:
 
 $$
-x[L-q:L]=\operatorname{revcomp}(x)[0:q]
+x[L-q:L]=\mathrm{revcomp}(x)[0:q]
 $$
 
-Suppose a longer substring of length $L+t$ is a reverse-complement palindrome. Its first $L$ characters are $x$, so its last $L$ characters must be $\operatorname{revcomp}(x)$.
+Suppose a longer substring of length $L+t$ is a reverse-complement palindrome. Its first $L$ characters are $x$, so its last $L$ characters must be $\mathrm{revcomp}(x)$.
 
 The existing portion of this last block must therefore satisfy:
 
 $$
-x[t:L]=\operatorname{revcomp}(x)[0:L-t]
+x[t:L]=\mathrm{revcomp}(x)[0:L-t]
 $$
 
 This is a suffix-prefix overlap of length $L-t$. Since $q$ is the maximum possible overlap:
@@ -1430,13 +1475,13 @@ Nucleotide substitutions are classified into two categories:
 Purines:
 
 $$
-\{A,G\}
+\lbrace A,G\rbrace 
 $$
 
 Pyrimidines:
 
 $$
-\{C,T\}
+\lbrace C,T\rbrace 
 $$
 
 The transition/transversion ratio is:
