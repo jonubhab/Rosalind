@@ -287,6 +287,7 @@ Combining the cases:
 $$
 \boxed{P(\text{dominant phenotype})=1-\frac{\binom{N-k}{2}-\frac34\binom{m}{2}-\frac12mn}{\binom{N}{2}}}
 $$
+
 **Algorithm:** Calculate the probability using the above formula directly.
 
 **Learning:** How a trait is inherited across generations through the possible combinations of parental alleles.
