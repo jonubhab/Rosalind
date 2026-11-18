@@ -1218,10 +1218,6 @@ $$
 
 ---
 
-## Additional Problems
-
----
-
 ### 37. Introduction to Alternative Splicing
 
 [**Problem Statement**](https://rosalind.info/problems/aspc/)
