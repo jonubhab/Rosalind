@@ -1,6 +1,6 @@
 # Rosalind Bioinformatics Stronghold Problems
 
-This repository contains 43 problems I solved from Rosalind, and a few reusable utility files.
+This repository contains few problems I solved from Rosalind, and a few reusable utility files.
 I have shared the algorithms used and things I learned from each problem.
 I have tried not using the predefined modules for bioinformatics, as algorithm design was the main focus.
 
