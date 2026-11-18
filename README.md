@@ -708,7 +708,7 @@ where $m(a_i)$ is the monoisotopic mass of the amino acid at position $i$.
 - Identify the longest sequence as the original DNA strand and treat the remaining sequences as introns.
 - Use `multi()` from [`Streak.py`](./Streak.py) to locate occurrences of the introns in the original strand.
 - Collect the starting and ending positions of complete intron matches.
-- Sort the intervals and merge overlapping or adjacent intervals.
+- Sort the intervals and merge overlapping or adjacent intervals using a stack.
 - Extract the regions outside the merged intron intervals to obtain the exons.
 - Join the exons, replace `T` with `U`, and translate the resulting RNA using [`prot.py`](./prot.py).
 
